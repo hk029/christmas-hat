@@ -1,0 +1,410 @@
+/*
+Template 2070 Holiday
+http://www.tooplate.com/view/2070-holiday
+*/
+html,
+body {
+    height             : 100%;
+    margin             : 0;
+    padding            : 0;
+    color              : #3e3e3e;
+    font-family        : Georgia, "Times New Roman", Times, serif;
+    font-size          : 14px;
+    line-height        : 18px;
+    background-color   : #ac3800;
+    background-repeat  : repeat-x;
+    background-position: top
+}
+
+#homepage {
+    background-image: url(images/body_homepage.png)
+}
+
+#subpage {
+    background-image: url(images/body_subpage.png)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color      : #333;
+    font-weight: 400;
+    padding    : 0;
+    margin     : 0 0 10px 0;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h1 {
+    font-size    : 34px;
+    margin-bottom: 35px
+}
+
+h2 {
+    font-size    : 26px;
+    margin-bottom: 30px;
+    line-height  : 30px;
+}
+
+h3 {
+    font-size  : 20px;
+    line-height: 24px
+}
+
+h4 {
+    font-size: 18px
+}
+
+h5 {
+    font-size: 16px
+}
+
+h6 {
+    font-size: 12px
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: #000;
+}
+
+.left {
+    float: left
+}
+
+.right {
+    float: right
+}
+
+.clear {
+    clear: both
+}
+
+.h10 {
+    height: 10px
+}
+
+.h20 {
+    height: 20px
+}
+
+.h30 {
+    height: 30px
+}
+
+.h60 {
+    height: 60px
+}
+
+img {
+    margin : 0;
+    padding: 0;
+    border : 0;
+}
+
+.img_border {
+    border    : 1px solid #ccc;
+    background: #fff;
+}
+
+.img_border_s {
+    padding: 4px
+}
+
+.img_border_b {
+    padding: 7px
+}
+
+.img_nom {
+    display      : block;
+    margin-bottom: 15px
+}
+
+.img_fl {
+    float  : left;
+    display: block;
+    margin : 1px 20px 8px 0
+}
+
+.img_fr {
+    float : right;
+    margin: 1px 0 8px 20px
+}
+
+p {
+    margin : 0 0 10px 0;
+    padding: 0
+}
+
+em {
+    color: #771201
+}
+
+hr {
+    clear        : both;
+    margin-bottom: 40px;
+    padding-top  : 28px;
+    border       : none;
+    background   : url(images/hr.png) center bottom no-repeat
+}
+
+label {
+    display: block;
+}
+
+a:link,
+a:visited {
+    color          : #771201;
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+a:hover,
+a:active {
+    outline: none
+}
+
+input {
+    line-height  : 28px;
+    padding      : 2px 5px;
+    border-radius: 4px;
+    border       : none;
+    min-width    : 300px;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.button {
+    color         : #fff;
+    background    : #83a506;
+    border        : none;
+    margin        : 0 5px;
+    padding       : 10px;
+    border-radius : 4px;
+    border-bottom : 4px solid #5c6b29;
+    transition    : all .2s ease;
+    outline       : none;
+    text-transform: uppercase;
+    font-weight   : 700;
+}
+
+.button:hover {
+    background: #1AA059;
+    color     : #ffffff;
+    transition: all .2s ease;
+    cursor    : pointer;
+}
+
+.button:active {
+    border    : 0;
+    transition: all .2s ease;
+}
+
+.button_big {
+    width      : 140px;
+    line-height: 50px;
+    font-size  : 16px;
+}
+
+.button_small {
+    line-height  : 30px;
+    border-radius: 4px;
+    padding      : 8px 10px;
+    min-width    : 60px;
+}
+
+.photo-wrapper {
+    text-align   : center;
+    margin-bottom: 20px;
+}
+
+.photo {
+    position: relative;
+}
+
+
+ul,
+ol {
+    margin    : 0;
+    padding   : 0;
+    list-style: none
+}
+
+ul.list_bullet {
+    margin    : 10px 0 10px 15px;
+    padding   : 0;
+    list-style: none
+}
+
+ul.list_bullet li {
+    color     : #797979;
+    margin    : 0 0 7px 0;
+    padding   : 0 0 0 20px;
+    background: url(images/bullet.png) no-repeat scroll 0 5px
+}
+
+ul.list_bullet li a {
+    color          : #797979;
+    font-weight    : normal;
+    text-decoration: none
+}
+
+ul.list_bullet li a:hover {
+    color: #797979
+}
+
+.bottom_list li {
+    padding: 6px 0px;
+}
+
+/** Columns **/
+
+.center {
+    margin: 0 auto
+}
+
+.content_wrapper {
+    overflow: hidden;
+    width   : 100%
+}
+
+.content_mb_30 {
+    margin-bottom: 30px
+}
+
+.content_mb_60 {
+    margin-bottom: 60px
+}
+
+.no_margin_right {
+    margin-right: 0 !important;
+}
+
+.margin_bottom {
+    margin-bottom: 30px
+}
+
+.wrapper {
+    max-width: 960px;
+    margin   : 0 auto;
+    padding  : 0 10px;
+}
+
+/**** Header ****/
+.header {
+    max-width : 980px;
+    height    : 100px;
+    background: url(images/header.jpg)
+}
+
+.site_title {
+    float      : left;
+    font-size  : 28px;
+    font-weight: bold;
+    margin     : 40px 22px;
+}
+
+.site_title a {
+    display    : block;
+    font-size  : 12px;
+    width      : 300px;
+    height     : 52px;
+    color      : #acacac;
+    text-indent: -10000px;
+    background : url(images/logo.png) no-repeat center
+}
+
+
+/**** Middle ****/
+
+.middle_wrapper {
+    width     : 100%;
+    height    : 380px;
+    background: #2a2a2a url(images/middle.jpg) center no-repeat
+}
+
+.row {
+    display       : flex;
+    flex-direction: row;
+    flex-wrap     : wrap;
+}
+
+.middle {
+    margin-top: 10px;
+    max-width : 980px;
+    padding   : 20px 0;
+    text-align: center;
+}
+
+
+.photo-wrap {
+    margin: 0 10px;
+    padding   : 9px;
+}
+
+.middle_content {
+    flex: 1 1 500px;
+    color  : #fff;
+    padding-top: 30px;
+}
+
+.middle_content h2 {
+    color: #fff;
+}
+
+.middle_content p {
+    font-size  : 18px;
+    line-height: 24px;
+}
+
+.middle_content h2.merrychristmas {
+    height     : 40px;
+    font-size  : 36px;
+    font-weight: 700;
+    text-align : center;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#inputImg {
+    width : 90%;
+    border:8px solid transparent;
+    -moz-border-image: url(images/slider_frame.png) 8 8 round;
+    -webkit-border-image: url(images/slider_frame.png) 8 8 round;
+    -o-border-image: url(images/slider_frame.png) 8 8 round;
+    border-image: url(images/slider_frame.png) 8 8 round;
+}
+
+#overlay {
+    position: absolute;
+    left: 18px;
+    top: 8px;
+}
+
+@media screen and (max-width: 400px) {
+    .input.row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .input.row .buttons {
+        margin-top: 20px;
+    }
+
+}
+
+.menu {
+	float: right;
+	padding: 10px;
+	height: 32px;
+	margin-top: 35px	
+}

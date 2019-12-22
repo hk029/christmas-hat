@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>christmas hat</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script src="js/commons.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/drawing.js"></script>
+    <script src="js/face-api.js"></script>
+    <script src="js/faceDetectionControls.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    </script>
+  </head>
+
+  <body>
+    <div id="homepage">
+      <div class="wrapper">
+        <div class="header">
+          <div class="site_title">
+            CHRISTMAS<span style="color:#fff">HAT</span>
+          </div>
+          <div class="menu">
+            <ul>
+              <li><a href="contact.html">Github</a></li>
+            </ul>
+            <br style="clear: left" />
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="middle row">
+          <div class="middle_content" class="left">
+            <h2 class="merrychristmas">MERRY CHRISTMAS</h2>
+            <p> 小伙伴们，圣诞快乐~ </p>
+            </p> <p>快来领取你的圣诞帽吧</p> 
+            <div class="row input" style="margin-top: 40px;">
+                <input id="imgUrlInput" type="text" class="input" placeholder="请输入网络图片地址">
+                <div class="buttons">
+                <span class="button button_small" id="url-btn">确定</span>
+            <span class="button button_small" id="upload" style="margin-right: 10px;">
+                本地上传</span>
+
+                </div>
+              </div>
+              <input class="hide" type='file' id="file-input" onchange="readURL(this);" accept="image/*" />
+          </div>
+          <div class="photo-wrap">
+            <div class="photo-wrapper theme-default">
+              <div class="photo">
+                 <img id="inputImg" src="images/default.jpg" style="max-width: 400px;" />
+                 <canvas id="overlay" ></canvas>
+              </div>
+            </div>
+               <p><span id="download" class="button button_big">下载头像</span></p>
+          </div>
+          <!-- END of photo -->
+        </div>
+      </div>
+    </div>
+    <script>
+    ready(function() {
+        initDomAndEvents();
+      run()
+    })
+    </script>
+  </body>
+</html>
