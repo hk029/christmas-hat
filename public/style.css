@@ -349,13 +349,13 @@ ul.list_bullet li a:hover {
 
 
 .photo-wrap {
-    margin: 0 10px;
-    padding   : 9px;
+    margin : 0 10px;
+    padding: 9px;
 }
 
 .middle_content {
-    flex: 1 1 500px;
-    color  : #fff;
+    flex       : 1 1 500px;
+    color      : #fff;
     padding-top: 30px;
 }
 
@@ -377,34 +377,53 @@ ul.list_bullet li a:hover {
 }
 
 #inputImg {
-    width : 90%;
-    border:8px solid transparent;
-    -moz-border-image: url(images/slider_frame.png) 8 8 round;
+    width               : 90%;
+    border              : 8px solid transparent;
+    -moz-border-image   : url(images/slider_frame.png) 8 8 round;
     -webkit-border-image: url(images/slider_frame.png) 8 8 round;
-    -o-border-image: url(images/slider_frame.png) 8 8 round;
-    border-image: url(images/slider_frame.png) 8 8 round;
+    -o-border-image     : url(images/slider_frame.png) 8 8 round;
+    border-image        : url(images/slider_frame.png) 8 8 round;
 }
 
 #overlay {
     position: absolute;
-    left: 18px;
-    top: 8px;
+    left    : 18px;
+    top     : 8px;
+}
+
+.menu {
+    padding: 50px 0;
+    text-align: right;
 }
 
 @media screen and (max-width: 400px) {
     .input.row {
         flex-direction: column;
-        align-items: center;
+        align-items   : center;
     }
+
     .input.row .buttons {
         margin-top: 20px;
     }
 
 }
 
-.menu {
-	float: right;
-	padding: 10px;
-	height: 32px;
-	margin-top: 35px	
+
+.loading-wrap {
+    position   : absolute;
+    left       : 0;
+    top        : 0;
+    background : #ececec;
+    width      : 100%;
+    height     : 100%;
+    color      : #254d58;
+    text-align : center;
+    line-height: 100vh;
+    font-size  : 16px;
+    font-weight: bold;
+    transition : all .2s ease;
+}
+
+.loading-icon {
+    width: 20px;
 }

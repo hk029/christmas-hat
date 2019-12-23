@@ -26,8 +26,8 @@ const getDistance = (a, b) => Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - 
  * @param {*} leftPoints
  * @param {*} rightPoints
  */
-const getMidPointOfEye = (leftPoints, rightPoints) =>
-  getMidPoint(getMedian(leftPoints), getMedian(rightPoints));
+const getMidPointOfEyebrows = (leftPoints, rightPoints) =>
+  getMidPoint(leftPoints[leftPoints.length - 1], rightPoints[0]);
 
 /**
  * 获取下颌的最低点
@@ -42,11 +42,22 @@ const getJawPos = jawPoints => getMedian(jawPoints);
  */
 const getFaceLength = (jawPos, midPointOfEyebrows) => (5 * getDistance(jawPos, midPointOfEyebrows)) / 3;
 
+const distanceOfPoint = (point, a, b, c) => Math.abs(a*point.y + b*point.x + c) / Math.sqrt(a*a + b*b)
+
 /**
  * 获取脸的宽度（即帽子宽度）
  * @param {*} outlinePoints
  */
-const getFaceWith = outlinePoints => getDistance(outlinePoints[0], outlinePoints[outlinePoints.length - 1])
+const getFaceWith = (outlinePoints, jawPos, midPointOfEyebrows) =>
+{
+    let k = getK(jawPos, midPointOfEyebrows);
+    let b = jawPos.x - k * (jawPos.y);
+
+    let leftWidth = distanceOfPoint(outlinePoints[0], k, -1, b);
+    let rightWidth = getDistance(outlinePoints[outlinePoints.length - 1], k, -1, b);
+    return leftWidth > rightWidth ? rightWidth * 2: leftWidth * 2;
+
+}
 
 /**
  * 获取脸的倾斜弧度
@@ -92,9 +103,9 @@ const getHeadPos = (midPos, jawPos) => {
 const getK = (a, b) => (a.x - b.x) / (a.y - b.y);
 
 function getHatInfo(results) {
-  function getFaceInfo(leftEyeBrowPoints, rightEyeBrowPoints, outlinePoints) {
+  function getFaceInfo(leftEyebrowPoints, rightEyebrowPoints, outlinePoints) {
     // 获取眉心的点
-    const midPointOfEyebrows = getMidPointOfEye(leftEyeBrowPoints, rightEyeBrowPoints);
+    const midPointOfEyebrows = getMidPointOfEyebrows(leftEyebrowPoints, rightEyebrowPoints);
     // 获取下颌的点
     const jawPos = getJawPos(outlinePoints);
     // 获取脸的倾斜角度
@@ -103,7 +114,7 @@ function getHatInfo(results) {
     const headPos = getHeadPos(midPointOfEyebrows, jawPos);
     // 获取脸大小信息
     const faceLength = getFaceLength(getJawPos(outlinePoints), midPointOfEyebrows);
-    const faceWidth = getFaceWith(outlinePoints);
+    const faceWidth = getFaceWith(outlinePoints, jawPos, midPointOfEyebrows);
     return {
       midPointOfEyebrows,
       jawPos,
@@ -114,9 +125,9 @@ function getHatInfo(results) {
     };
   }
   return results.map(({landmarks}) => {
-    const rightEyeBrowPoints = landmarks.getRightEyeBrow();
-    const leftEyeBrowPoints = landmarks.getLeftEyeBrow();
+    const rightEyebrowPoints = landmarks.getRightEyeBrow();
+    const leftEyebrowPoints = landmarks.getLeftEyeBrow();
     const outlinePoints = landmarks.getJawOutline();
-    return getFaceInfo(leftEyeBrowPoints, rightEyeBrowPoints, outlinePoints);
+    return getFaceInfo(leftEyebrowPoints, rightEyebrowPoints, outlinePoints);
   });
 }

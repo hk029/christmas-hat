@@ -1,4 +1,4 @@
-let uploadBtn, fileLoader, urlBtn, urlInput, inputImg, canvas;
+let uploadBtn, fileLoader, urlBtn, urlInput, inputImg, canvas, loading;
 
 async function requestExternalImage(imageUrl) {
   const res = await fetch('fetch_external_image', {
@@ -57,6 +57,7 @@ function saveFile(data, filename) {
 }
 
 function initDomAndEvents() {
+    loading = document.getElementById('loading');
   uploadBtn = document.getElementById('upload');
   fileLoader = document.getElementById('file-input');
   urlBtn = document.getElementById('url-btn');
@@ -97,10 +98,10 @@ async function updateResults() {
   if (!isFaceDetectionModelLoaded()) {
     return;
   }
+  loading.style.display = 'none';
   const results = await faceapi.detectAllFaces(inputImg).withFaceLandmarks();
   faceapi.matchDimensions(canvas, inputImg);
   const resizedResults = faceapi.resizeResults(results, inputImg);
-  console.log(resizedResults)
   const info = getHatInfo(resizedResults);
   faceapi.draw.drawFaceLandmarks(canvas, resizedResults)  // 直接画出识别的的特征点
   drawing(canvas, {

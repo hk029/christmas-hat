@@ -8,7 +8,7 @@ const translateHat = (faceWidth, x, y) => {
   const picSize = { width: faceWidth / 0.6, height: (faceWidth * 0.65) / 0.6 };
   return {
     ...picSize,
-    x: x - (60 * picSize.width) / 200,
+    x: x - (62 * picSize.width) / 200,
     y: y - (60 * picSize.height) / 130,
   };
 };
