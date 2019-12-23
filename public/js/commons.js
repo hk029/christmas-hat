@@ -107,8 +107,8 @@ async function updateResults() {
   drawing(canvas, {
     info,
     imgSrc: inputImg.src,
-    width: inputImg.offsetWidth,
-    height: inputImg.offsetHeight,
+    width: canvas.width,
+    height: canvas.height,
   });
 }
 

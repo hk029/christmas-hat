@@ -377,7 +377,7 @@ ul.list_bullet li a:hover {
 }
 
 #inputImg {
-    width               : 90%;
+    width               : 100%;
     border              : 8px solid transparent;
     -moz-border-image   : url(images/slider_frame.png) 8 8 round;
     -webkit-border-image: url(images/slider_frame.png) 8 8 round;
@@ -387,7 +387,7 @@ ul.list_bullet li a:hover {
 
 #overlay {
     position: absolute;
-    left    : 18px;
+    left    : 8px;
     top     : 8px;
 }
 
